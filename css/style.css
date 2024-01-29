@@ -17,11 +17,12 @@
     position: absolute;
     bottom: 0px;
     width: 70px;
-    animation: pipe-animation 1000ms infinite linear 
+    animation: pipe-animation 2s infinite linear 
 }
 
 .placar {
     position: absolute;
+
     
 }
 
