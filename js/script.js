@@ -3,6 +3,49 @@ const pipe = document.querySelector('.pipe');
 const game = document.querySelector('.gameover')
 
 
+let scoreMaximo = 0;
+let scoreTotal = 0;
+let scoreAtual = 0;
+
+let temData = ()=> {
+    if (pontuacaoMaxima > 0){
+        return true;
+    } else{
+        return false;
+    }
+}
+
+
+
+
+
+const score_parcial = setInterval(() => {
+    scoreTotal++
+    scoreAtual.innerText = scoreTotal;
+    scoreAtual = scoreTotal;
+    return scoreAtual
+}, 200);
+
+
+function pararScore(){
+    localStorage.setItem('scoreAtual', scoreAtual);
+    clearInterval(score_parcial)
+}
+
+function gravando (){
+    if (!temData){
+        localStorage.setItem('scoreRecorde', scoreAtual);
+        return scoreMaximo = localStorage.getItem('scoreRecorde');
+    }
+        else {
+            let scoreData = localStorage.getItem('scoreRecorde');
+            if (scoreAtual >= scoreData){
+                return localStorage.setItem('scoreRecorde', scoreAtual);
+            }
+        }
+}
+
+
 function jump() {
     mario.classList.add('jump');
     
@@ -35,20 +78,7 @@ function jump() {
  },10);
 
  
-function placar(){
-    const  placar = {
-        pontuacao: 0,
-        desenha () {
-            context.front = '50px serif';
-            context.fillText(`Score  ${placar.pontuacao} `, 50, 90);
-            context.fillStyle = 'white';
-        },
-        atualiza () {
 
-        }
-    } 
-    return placar
-}
 
 
 

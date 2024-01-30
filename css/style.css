@@ -20,10 +20,18 @@
     animation: pipe-animation 2s infinite linear 
 }
 
-.placar {
-    position: absolute;
-
+.tempo-e-escore {
     
+    font-size: 17px;
+    background-color: rgba(0, 0, 0, 0.151);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 20px;
+
+    color: #fffb0f;
 }
 
 .clouds
